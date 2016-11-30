@@ -1,0 +1,7 @@
+@reboot /var/www/html/startup.sh
+00 04 * * * /usr/bin/php /var/www/html/update.php 22 
+30 04 * * * /usr/bin/php /var/www/html/update.php 5 
+00 02 * * * /usr/bin/php /var/www/html/update.php 22 
+30 02 * * * /usr/bin/php /var/www/html/update.php 5 
+00 06 * * * /usr/bin/php /var/www/html/update.php 22 
+30 06 * * * /usr/bin/php /var/www/html/update.php 5 
