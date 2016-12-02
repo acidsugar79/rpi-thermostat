@@ -10,7 +10,7 @@ dtoverlay=w1-gpio
 ```
 and run-
 ```bash
-sudo apt-get install apache2 php5 git
+sudo apt-get install apache2 php5 screen git
 sudo modprobe w1-gpio
 sudo modprobe w1-therm
 cd /var/www/html
