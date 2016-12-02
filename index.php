@@ -1,4 +1,5 @@
 <?php
+
 	$cmd=$_GET['cmd'];
 	$data=$_GET['data'];
 	$del=$_GET['del'];
@@ -119,7 +120,7 @@
 <html>
 	<head>
 	<title>Home</title>
-	<link rel="apple-touch-icon" href="HAL9000.png"/>
+	<link rel="apple-touch-icon" href="auto.svg"/>
 	<meta name="viewport" content="width=250, user-scalable=no" />
 	<!-- initial-scale=1.0, maximum-scale=1.0, -->
 	<meta name="apple-mobile-web-app-capable" content="yes">
@@ -162,26 +163,29 @@
 	</style>
 	<script src="jquery-3.1.1.min.js"></script>
 	<script>
-		function changemode() {
+		function changemode(setmode) {
 			var mode=document.getElementById('mode');
 			var hal=document.getElementById('hal');
 			var nextmode='Auto';
 			if (mode.innerHTML=='Mode: Auto') nextmode='On';
 			if (mode.innerHTML=='Mode: On') nextmode='Off';
 			if (mode.innerHTML=='Mode: Off') nextmode='Auto';
+
+			if (setmode) nextmode=setmode;
+
 			if (nextmode=='On') {
 				//send ajax mode..
-				hal.src='on.png';
+				hal.src='on.svg';
 				mode.innerHTML='Mode: On';
 			}
                         if (nextmode=='Off') {
                                 //send ajax mode..
-                                hal.src='off.png';
+                                hal.src='off.svg';
                                 mode.innerHTML='Mode: Off';
                         }
                         if (nextmode=='Auto') {
                                 //send ajax mode..
-                                hal.src='auto.png';
+                                hal.src='auto.svg';
                                 mode.innerHTML='Mode: Auto';
                         }
 			savevar('mode',nextmode);
@@ -234,15 +238,15 @@
 				var hal=document.getElementById('hal');
 				var nextmode=data[2];
 				if (nextmode=='On') {
-					hal.src='on.png';
+					hal.src='on.svg';
 					mode.innerHTML='Mode: On';
 				}
 		                if (nextmode=='Off') {
-		                        hal.src='off.png';
+		                        hal.src='off.svg';
 		                        mode.innerHTML='Mode: Off';
 		                }
 		                if (nextmode=='Auto') {
-		                        hal.src='auto.png';
+		                        hal.src='auto.svg';
 		                        mode.innerHTML='Mode: Auto';
 		                }
 				//alert(nextmode);
@@ -254,11 +258,12 @@
 						document.getElementById('main').style.backgroundImage = "url('')";
 					} else {
 						//alert(data[0]);
-						document.getElementById('main').style.backgroundImage = "url('gas.jpg')";
+						document.getElementById('main').style.backgroundImage = "url('gas.svg')";
 					}
 				} else {
 					document.getElementById('main').style.backgroundImage = "url('')";
 				}
+				//document.getElementById('main').style.backgroundImage = "url('gas.svg')";
 				setTimeout("getdata();",3000);
 			   },
 			   type: 'GET'
@@ -398,9 +403,14 @@
                            type: 'GET'
                         });
 </script>
-			<br>
 			<span id=cur>22.5</span>&deg;<br>
-			<img onmouseup="changemode();" id=hal style="width: 50vw;" src="HAL9000.png"><br>
+			<span style="font-size: 3vw">
+			<img onmouseup="changemode('Off');" style="width: 15vw;" src="off.svg">&nbsp;&nbsp;&nbsp;
+			<img onmouseup="changemode('Auto');" style="width: 15vw;" src="auto.svg">&nbsp;&nbsp;&nbsp;
+			<img onmouseup="changemode('On');" style="width: 15vw;" src="on.svg">
+			<br>
+			<img onmouseup="if (0) {changemode();}" id=hal style="width: 50vw;" src="off.svg"><br>
+			</span>
 			<span class=dec onmouseup="dec();">&#10134;</span>&nbsp;
 			<span class=set id=set onmouseup="this.innerHTML=parseFloat(prompt('Temprature?'))-0.5;inc();">22.5</span>&deg;&nbsp;
 			<span class=inc onmouseup="inc();">&#10133;</span><br>
