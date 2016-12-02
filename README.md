@@ -16,9 +16,11 @@ sudo modprobe w1-therm
 cd /var/www/html
 git clone https://github.com/acidsugar79/rpi-thermostat.git
 mv rpi-thermostat/* ./
+chmod www-data:www-data -Rv /var/www/html
+sudo usermod -a -G www-data pi
 screen -dm -S TLOOP sh /var/www/html/loop.sh
 ```
-
+passwordless sudo needed on "pi" ?
 designed with a smartphone in portrait
 
 ![preview](https://raw.githubusercontent.com/acidsugar79/rpi-thermostat/master/preview.png)
