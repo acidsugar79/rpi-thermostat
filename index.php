@@ -1,5 +1,4 @@
 <?php
-
 	$cmd=$_GET['cmd'];
 	$data=$_GET['data'];
 	$del=$_GET['del'];
@@ -185,7 +184,7 @@
                         }
                         if (nextmode=='Auto') {
                                 //send ajax mode..
-                                hal.src='auto.svg';
+                                hal.src='auto.php?junk='+Math.floor(Date.now()/1000);
                                 mode.innerHTML='Mode: Auto';
                         }
 			savevar('mode',nextmode);
@@ -246,7 +245,7 @@
 		                        mode.innerHTML='Mode: Off';
 		                }
 		                if (nextmode=='Auto') {
-		                        hal.src='auto.svg';
+		                        hal.src='auto.php?junk='+Math.floor(Date.now()/1000);
 		                        mode.innerHTML='Mode: Auto';
 		                }
 				//alert(nextmode);
