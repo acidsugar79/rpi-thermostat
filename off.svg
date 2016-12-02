@@ -19,7 +19,7 @@
         />
         <path d="M 25 5
                 A 20 20 0 1 0 25.01 5
-                " stroke="#333333" fill="#444444" stroke-width="2" fill-opacity="1"
+                " stroke="#333333" fill="#444488" stroke-width="2" fill-opacity="1"
         />
   </g>
 </svg>
