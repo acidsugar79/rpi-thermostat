@@ -22,3 +22,4 @@ designed with a smartphone in portrait
 ![preview](https://raw.githubusercontent.com/acidsugar79/rpi-thermostat/master/preview.png)
 ![preview](https://raw.githubusercontent.com/acidsugar79/rpi-thermostat/master/preview1.png)
 ![preview](https://raw.githubusercontent.com/acidsugar79/rpi-thermostat/master/preview2.png)
+
