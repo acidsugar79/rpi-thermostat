@@ -5,9 +5,10 @@ Opto isolated 5v relay on GPIO 14
 
 to install-
 Add the following line to /boot/config.txt
+```bash
 dtoverlay=w1-gpio
-
-run-
+```
+and run-
 ```bash
 sudo apt-get install apache2 php5 git
 sudo modprobe w1-gpio
