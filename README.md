@@ -15,6 +15,8 @@ sudo modprobe w1-gpio
 sudo modprobe w1-therm
 cd /var/www/html
 git clone https://github.com/acidsugar79/rpi-thermostat.git
+mv rpi-thermostat/* ./
+screen -dm -S TLOOP sh /var/www/html/loop.sh
 ```
 
 designed with a smartphone in portrait
