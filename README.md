@@ -1,3 +1,3 @@
 # rpi-thermostat
 
-# Will add more later....
+![preview](https://raw.githubusercontent.com/acidsugar79/rpi-thermostat/master/preview.png)
