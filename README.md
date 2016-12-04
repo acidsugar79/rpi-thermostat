@@ -1,7 +1,7 @@
 # rpi-thermostat
 
 Using a ds18b20 on 3v3,GPIO 4,GND
-and an opto isolated 5v relay on GPIO 17
+and an opto isolated 5v relay on GPIO 21
 
 to install-
 Add the following line to /boot/config.txt

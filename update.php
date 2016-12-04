@@ -38,15 +38,20 @@
 
         if ($mode=="On" || $mode=="Auto") {
                 if ($set>$temp) {
-                        $junk=exec("/usr/bin/python /var/www/html/gpio_on.py 2> /dev/null");
+                        //$junk=exec("/usr/bin/python /var/www/html/gpio_on.py 2> /dev/null");
                         echo "s:$set t:$real on\n";
-			//$junk=exec("/usr/bin/php /var/www/html/notify.php \"Heating\"");
+			$junk=exec("gpio -g mode 21 out");
+			$junk=exec("gpio -g write 21 1");
                 } else {
-                        $junk=exec("/usr/bin/python /var/www/html/gpio_off.py 2> /dev/null");
+                        //$junk=exec("/usr/bin/python /var/www/html/gpio_off.py 2> /dev/null");
                         echo "s:$set t:$real off\n";
+			$junk=exec("gpio -g mode 21 out");
+                        $junk=exec("gpio -g write 21 0");
                 }
         } else {
-                $junk=exec("/usr/bin/python /var/www/html/gpio_off.py 2> /dev/null");
+                //$junk=exec("/usr/bin/python /var/www/html/gpio_off.py 2> /dev/null");
                 echo "s:$set t:$real off\n";
+		$junk=exec("gpio -g mode 21 out");
+                $junk=exec("gpio -g write 21 0");
         }
 ?>
