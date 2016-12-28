@@ -10,7 +10,8 @@
 			$mode=file_get_contents("mode");
 			$set=file_get_contents("set");
 			//$link=file_get_contents("link");
-                        echo "$temp:$set:$mode";
+			$uptime=exec("uptime  -p");
+                        echo "$temp:$set:$mode:$uptime";
                 }
 		if ($cmd=="mode") {
 			if ($data) file_put_contents("mode",$data);
@@ -232,6 +233,7 @@
 			      	document.getElementById('cur').innerHTML=data[0];
 				document.getElementById('set').innerHTML=data[1];
 				//document.getElementById('link').innerHTML=data[3];
+				document.getElementById('uptime').innerHTML=data[3];
 
 				var mode=document.getElementById('mode');
 				var hal=document.getElementById('hal');
@@ -273,7 +275,7 @@
 	</head>
 	<body id=main>
 		<span class=mode>
-			<!--<span id=link></span><br>-->
+			<span id=uptime style="font-size: 2vw;"></span><br>
 			<span id=mode style="float:right;">Mode: Auto</span>
 		</span>
 		<div style="text-align: center;">
